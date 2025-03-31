@@ -1,6 +1,7 @@
 import math
 import random
 
+
 def main():
     print("\nWelcome to Brain Games!")
     player_name = input("What is your name? ").strip()
@@ -11,6 +12,7 @@ def main():
     print("\nGame 2: Geometric Progression")
     print("Find the missing number in the sequence")
     play_progression_game(player_name)
+
 
 def play_lcm_game(name):
     rounds = 3
@@ -30,10 +32,13 @@ def play_lcm_game(name):
             return
     print(f"\nCongratulations, {name}! You won the LCM game.")
 
+
 def lcm_of_three(a, b, c):
     def lcm(x, y):
         return x * y // math.gcd(x, y)
+
     return lcm(lcm(a, b), c)
+
 
 def play_progression_game(name):
     rounds = 3
@@ -41,7 +46,7 @@ def play_progression_game(name):
         start = random.randint(1, 5)
         ratio = random.randint(2, 4)
         length = random.randint(7, 10)
-        progression = [start * (ratio ** i) for i in range(length)]
+        progression = [start * (ratio**i) for i in range(length)]
         hidden_index = random.randint(2, length - 3)  # Keep middle positions
         answer = progression[hidden_index]
         progression[hidden_index] = ".."
@@ -57,6 +62,7 @@ def play_progression_game(name):
             print(f"\nGame over, {name}. Try again later.")
             return
     print(f"\nWell done, {name}! You mastered the progression game.")
+
 
 if __name__ == "__main__":
     main()
